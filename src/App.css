@@ -1,38 +1,95 @@
-.App {
-  text-align: center;
+*{
+  box-sizing: border-box;
+  margin: 0; padding: 0;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body{
+  background: rgb(230, 230, 230);
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* 재사용 */
+.shadow{
+  box-shadow: 1px 2px 1px #000;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.wrap{
+  width: 430px; height: 932px; padding: 100px 15px 15px 15px;
+  margin: 0 auto; overflow: hidden; position: relative;
+  background: #fff; z-index: 1;
 }
-
-.App-link {
-  color: #61dafb;
+/* main_search_box */
+.main_search_box{
+  width: 400px; height: 50px; display: block; position: relative; border-radius: 10px;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.main_search_box #main_search_bar{
+  width: 100%; height: 100%; border-radius: 10px; display: block;
+  padding-left: 40px
+}
+.main_search_box #main_search_bar:focus{
+  outline: none;
+}
+.main_search_box #main_search_bar::placeholder{
+  color: #B6B6B6;
+}
+.main_search_box .main_search_icon{
+  position: absolute; top: 50%; left: 10px;
+  transform: translate(0, -50%);
+}
+/* content_box */
+.main_content_box{
+  width: 400px; height: 735px; display: block; margin-top: 30px;
+  border-radius: 10px; border: solid 1px #000; padding: 15px;
+}
+.main_content_box .pharmacy_explain{
+  font-size: 16px; margin: 10px 0 15px;
+}
+.main_content_box .kakao_map{
+  width: 370px; height: 655px; border: solid 1px #000; border-radius: 10px;
+}
+/* detail */
+.main_detail{
+  width: 430px; height: 340px; background: #fff;
+  border-radius: 30px; border: solid 1px #000; font-weight: bold;
+  position: absolute; bottom: 0; left: 0; padding: 10px;
+  transform: translateY(430px); transition: all 1s;
+}
+.main_detail.on{
+  transform: translateY(0);
+}
+.main_detail .pharmacy_info{
+  margin-top: 30px;
+}
+.main_detail .pharmacy_info .pharmacy_name{
+  font-size: 20px; margin-bottom: 9px;
+}
+.main_detail .pharmacy_info p{
+  font-size: 14px; margin-bottom: 9px;
+}
+.main_detail .pharmacy_info p:last-child{
+  margin-bottom: 0;
+}
+.main_detail .pharmacy_time{
+  margin-top: 15px;
+}
+.main_detail .main_detail_bar{
+  width: 50px; height: 5px; border-radius: 30px;
+  background: #D9D9D9; display: block;
+  position: absolute; top: 15px; left: 50%;
+  transform: translateX(-50%);
+}
+.main_detail .pharmacy_time .pharmacy_time_title{
+  margin-bottom: 3px;
+}
+.main_detail .pharmacy_time .pharmacy_time_line{
+  margin-bottom: 3px;
+}
+.main_detail .pharmacy_time .pharmacy_time_line > span{
+  font-size: 14px;
+}
+.main_detail .pharmacy_time .pharmacy_time_line > span:first-child{
+  margin-right: 5px;
+}
+.main_detail .pharmacy_btn{
+  width: 380px; margin: 15px auto 0; display: flex; gap: 20px;
+}
+.main_detail .pharmacy_btn > button{
+  width: 180px; height: 50px; border-radius: 30px; 
+  background: #1E90FF; color: #fff; cursor: pointer;
 }
